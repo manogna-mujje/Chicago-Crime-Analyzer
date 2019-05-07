@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Upload Authors</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/jquery-ui.css" />
+</head>
+<body>
+    <h1>Insert Record </h1>
+	<div class="container">
+        <form action="/uploadSingleRecord" method="POST"> 
+            <fieldset> 
+            <label for="ID">Case ID</label>
+            <input type="text" id="ID" name="ID" placeholder="10000094"> <br>
+        
+            <label for="caseNumber">Last Name</label>
+            <input type="text" id="caseNumber" name="CaseNumber" placeholder="HY189866"><br>
+
+            <label for="date">Date and Time</label>
+            <input type="text" id="date" name="Date" placeholder="3/18/2015  11:00:00 PM"><br>
+
+            <label for="block">Block</label>
+            <input type="text" id="block" name="Block" placeholder="049XX S DREXEL BLVD"><br>
+
+            <label for="IUCR">IUCR</label>
+            <input type="text" id="IUCR" name="IUCR" placeholder="4659"><br>
+
+            <label for="primaryType">Primary Type</label>
+            <input type="text" id="primaryType" name="PrimaryType" placeholder="Battery"><br>
+
+            <label for="description">Description</label>
+            <input type="text" id="description" name="Description" placeholder="ARMED: HANDGUN"><br>
+
+            <label for="locationdescription">Location Description</label>
+            <input type="text" id="locationdescription" name="LocationDescription" placeholder="Street"><br>
+
+            <label for="beat">Beat</label>
+            <input type="text" id="beat" name="Beat" placeholder="111"><br>
+
+            <label for="district">District</label>
+            <input type="text" id="district" name="District" placeholder="23"><br>
+
+            <label for="ward">Ward</label>
+            <input type="text" id="ward" name="Ward" placeholder="7"><br>
+
+            <label for="communityarea">Community Area</label>
+            <input type="text" id="communityarea" name="CommunityArea" placeholder="26"><br>
+
+            <label for="fbicode">FBI Code</label>
+            <input type="text" id="fbicode" name="FBICode" placeholder="78"><br>
+        
+            <label for="domestic">Domestic Violence</label>
+            <select id="domestic" name="Domestic">
+                <option value="true">True</option>
+                <option value="false">False</option>
+            </select> <br>
+            
+            <label for="arrest">Arrested</label>
+            <select id="arrest" name="Arrest">
+                <option value="true">True</option>
+                <option value="false">False</option>
+            </select> <br>
+            
+        
+            <input type="submit" value="Submit">
+        </fieldset>
+        </form>
+      </div>
+</body>
+</html>
+
+

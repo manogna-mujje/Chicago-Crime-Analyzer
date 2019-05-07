@@ -1,0 +1,114 @@
+.left-div {
+    border: 1px solid grey;
+    margin-right: 10px;
+    margin-left: 100px;
+    padding-top: 20px;
+    margin-bottom: 30px;
+}
+
+.right-div {
+    border: 1px solid grey;
+    margin-left: 10px;
+    padding-top: 25px;
+}
+
+.form-control {
+    margin-left: 50px;
+    padding-right: 40px;
+    display: block;
+    width: 38%;
+    color: #666;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #d6d2d3;
+    box-shadow: none;
+    border-radius: 4px;
+    font-size: 16px;
+    height: 45px;
+    line-height: 50px;
+    margin-top: 10px;
+}
+
+.form-control1 {
+    padding-right: 40px;
+    display: block;
+    width: 63%;
+    color: #666;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #d6d2d3;
+    box-shadow: none;
+    border-radius: 4px;
+    font-size: 16px;
+    height: 45px;
+    line-height: 50px;
+    margin-top: 20px;
+}
+.form-label1 {
+    font-size: 16px;
+    margin-top: 20px;
+    margin-left: 50px;
+    color: grey;
+}
+
+.form-btn {
+    display: block;
+    background-color: brown;
+    border-color: brown;
+    width: 30%;
+    height: 45px;
+    color: white;
+    font-size: 18px;
+    padding: 9px 31px;
+    line-height: 1.33;
+    border-radius: 100px;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    text-align: center;
+    margin-left: 80px;
+    margin-bottom: 50px;
+    margin-top: 30px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.text1{
+    color: brown;
+    margin-left: 70px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.text2{
+    color: brown;
+    margin-left: 70px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.form-btn1 {
+    display: block;
+    background-color: brown;
+    border-color: brown;
+    width: 60%;
+    height: 45px;
+    color: white;
+    font-size: 18px;
+    padding: 9px 31px;
+    line-height: 1.33;
+    border-radius: 100px;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    text-align: center;
+    margin-left: 100px;
+    margin-bottom: 50px;
+    margin-top: 30px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.db-row2 {
+    padding-top : 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid grey;
+    border-top: 1px solid grey;
+    font-size: 16px;
+    margin-bottom: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    color: brown;
+}

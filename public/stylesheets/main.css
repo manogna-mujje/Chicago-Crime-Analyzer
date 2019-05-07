@@ -1,0 +1,43 @@
+body {
+    /* background-image: url("/crime4.jpg"); */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: black;
+    background-size: 1500px 800px;
+}
+
+.homepage {
+    background-color: lightgoldenrodyellow;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: Arial;
+    background-size: 1500px 800px;
+}
+#homeHeader{
+    margin-top: 250px;
+    color: yellow;
+    font-size: 40px;
+}
+
+.locationwise {
+    color: #0067db;
+    position: relative;
+    top: 20px;
+    left: 100 px;
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#form {
+    position: relative;
+    top: 20px;
+    left: 100 px;
+}
+
+#canvas{
+    /* border:2px solid orangered !important; */
+    background-color: black
+}

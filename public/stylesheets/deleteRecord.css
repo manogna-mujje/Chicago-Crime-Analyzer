@@ -1,0 +1,63 @@
+.div-left {
+    margin-left: 30px;
+}
+
+.form-control {
+    margin-left: 50px;
+    padding-right: 40px;
+    display: block;
+    width: 100%;
+    color: #666;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #d6d2d3;
+    box-shadow: none;
+    border-radius: 4px;
+    font-size: 16px;
+    height: 45px;
+    line-height: 50px;
+    margin-top: 10px;
+}
+.h3-text {
+    padding-left: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+.header-text {
+    text-align: center; 
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+.del-btn {
+    display: block;
+    background-color: #0067db;
+    border-color: #0067db;
+    width: 50%;
+    height: 45px;
+    color: white;
+    font-size: 18px;
+    padding: 9px 31px;
+    line-height: 1.33;
+    border-radius: 100px;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    text-align: center;
+    margin-left: 100px;
+    margin-bottom: 50px;
+    margin-top: 10px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.db-row2 {
+    padding-top : 10px;
+    padding-bottom: 10px;
+    background-color: white;
+    border-bottom: 1px solid grey;
+    border-top: 1px solid grey;
+    font-size: 16px;
+    margin-bottom: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #0067db;
+}

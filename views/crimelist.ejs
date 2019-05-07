@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Upload Authors</title>
+    <script type="text/javascript" src="/js/navbar.js"></script>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/display.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <style>
+        th, td {
+            padding: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row db-row2">
+        <div class="col-sm-1">
+
+        </div>
+        <div class="col-sm-2">
+            <label><a href="/displayContents">View and Modify Records</a></label>
+        </div>
+        <div class="col-sm-2">
+            <label><a href="/deleteRecords">Delete Records</a></label>
+        </div>
+        <div class="col-sm-2">
+            <label><a href="/searchRecords">Search Records</a></label>
+        </div>
+        <div class="col-sm-5">
+
+        </div>
+    </div>
+    <h1 class="header-text2"> Crime Details </h1>
+    <table id="crimeTable" border="1" style="margin-left: 7px">
+            <tr>
+                <th>ID</th>
+                <th>Case Number</th>
+                <th>Date</th>
+                <th>Block</th>
+                <th>IUCR</th>
+                <th>Primary Type</th>
+                <th>Description</th>
+                <th>Location Description</th>
+                <th>Arrest</th>
+                <th>Domestic</th>
+                <th>Beat</th>
+                <th>District</th>
+                <th>Ward</th>
+                <th>Community Area</th>
+                <th> FBI Code</th>
+                <th> Edit Record</th>
+            </tr>
+            <% for(var i=0; i < crime.length; i++) { %>
+            <tr>
+                <td class="ID"><%= crime[i].ID %></td>
+                <td class="CaseNumber"><%= crime[i]['CaseNumber'] %></td>
+                <td class="Date"><%= crime[i]['Date'] %></td>
+                <td class="Block"><%= crime[i].Block %></td>
+                <td class="IUCR"><%= crime[i].IUCR %></td>
+                <td class="PrimaryType"><%= crime[i].PrimaryType %></td>
+                <td class="Description"><%= crime[i].Description %></td>
+                <td class="LocationDescription"><%= crime[i].LocationDescription %></td>
+                <td class="Arrest"><%= crime[i].Arrest %></td>
+                <td class="Domestic"><%= crime[i].Domestic %></td>
+                <td class="Beat"><%= crime[i].Beat %></td>
+                <td class="District"><%= crime[i].District %></td>
+                <td class="Ward"><%= crime[i].Ward %></td>
+                <td class="CommunityArea"><%= crime[i].CommunityArea %></td>
+                <td class="FBICode"><%= crime[i].FBICode %></td>
+                <td class="tag"><a id="<%=i%>" href="/updateRecord" style="padding-right: 10px" onclick="myFunction(event)">Edit</a></td>
+            </tr>
+            <% } %>
+        </table>
+        <script type="text/javascript">
+        function myFunction(event) { 
+            var index = parseInt(event.target.id);
+            var data = updateStorage(index);
+            sessionStorage.setItem("crime", JSON.stringify(data));
+        }
+
+        function updateStorage(i){
+            var data = {
+                ID: document.getElementsByClassName("ID")[i].innerHTML,
+                CaseNumber: document.getElementsByClassName("CaseNumber")[i].innerHTML,
+                Date: document.getElementsByClassName("Date")[i].innerHTML,
+                Block: document.getElementsByClassName("Block")[i].innerHTML,
+                IUCR: document.getElementsByClassName("IUCR")[i].innerHTML,
+                PrimaryType: document.getElementsByClassName("PrimaryType")[i].innerHTML,
+                Description: document.getElementsByClassName("Description")[i].innerHTML,
+                LocationDescription: document.getElementsByClassName("LocationDescription")[i].innerHTML,
+                Arrest: document.getElementsByClassName("Arrest")[i].innerHTML,
+                Domestic: document.getElementsByClassName("Domestic")[i].innerHTML,
+                Beat: document.getElementsByClassName("Beat")[i].innerHTML,
+                District: document.getElementsByClassName("District")[i].innerHTML,
+                Ward: document.getElementsByClassName("Ward")[i].innerHTML,
+                CommunityArea: document.getElementsByClassName("CommunityArea")[i].innerHTML,
+                FBICode: document.getElementsByClassName("FBICode")[i].innerHTML
+            }
+            // 
+            // console.log(data)
+            return data;
+        }
+        </script>
+</body>
+
+</html>

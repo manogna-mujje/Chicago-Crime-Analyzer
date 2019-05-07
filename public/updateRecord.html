@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/jquery-ui.css" />
+    <title>Upload Authors</title>
+    <script type="text/javascript" src="/js/navbar.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/dboptions.css">
+</head>
+
+<body onload="myFunction()">
+    <div class="row db-row2">
+        <div class="col-sm-1">
+
+        </div>
+        <div class="col-sm-2">
+            <label><a href="/displayContents">View and Modify Records</a></label>
+        </div>
+        <div class="col-sm-2">
+            <label><a href="/deleteRecords">Delete Records</a></label>
+        </div>
+        <div class="col-sm-2">
+            <label><a href="/searchRecords">Search Records</a></label>
+        </div>
+        <div class="col-sm-5">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-3">
+        </div>
+        <div class="left-div col-xs-6">
+            <div class="container">
+                <h1 class="text1">Edit Crime details</h1>
+                <form action="/updateRecord" method="POST">
+                    <fieldset>
+                        <div class="col-xs-2">
+                            <label for="id" class="form-label1">Case ID</label>
+                        </div>
+                        
+                        <div className="form-group">
+                            <input type="text" id="ID" name="ID" placeholder="Enter Case ID" class="form-control">
+                        </div>
+        
+                        <div class="col-xs-2">
+                                <label for="id" class="form-label1">Case Number</label>
+                        </div>
+                        <div className="form-group">
+                            <input type="text" id="caseNumber" name="CaseNumber" placeholder="Enter Case Number"
+                                class="form-control">
+                        </div>
+                        <div class="col-xs-2">
+                                <label for="id" class="form-label1">Date</label>
+                            </div>
+                        <div className="form-group">
+                            <input type="text" id="date" name="Date" placeholder="Enter Data & Time"
+                                class="form-control">
+                        </div>
+                        <div class="col-xs-2">
+                                <label for="id" class="form-label1">Block</label>
+                            </div>
+                        <div className="form-group">
+                            <input type="text" id="block" name="Block" placeholder="Enter Block Details"
+                                class="form-control">
+                        </div>
+                        <div class="col-xs-2">
+                                <label for="id" class="form-label1">IUCR</label>
+                            </div>
+                        <div className="form-group">
+                            <input type="text" id="IUCR" name="IUCR" placeholder="Enter IUCR" class="form-control">
+                        </div>
+                        <div class="col-xs-2">
+                                <label for="id" class="form-label1">Primary Type</label>
+                            </div>
+                        <div className="form-group">
+                            <input type="text" id="primaryType" name="PrimaryType"
+                                placeholder="Enter Primary Type of Crime" class="form-control">
+                        </div>
+                        <div class="col-xs-2">
+                                <label for="id" class="form-label1">Description</label>
+                            </div>
+                        <div className="form-group">
+                            <input type="text" id="description" name="Description" placeholder="Describe the crime"
+                                class="form-control">
+                        </div>
+                        <div class="col-xs-2">
+                                <label for="id" class="form-label1">Location</label>
+                            </div>
+                        <div className="form-group">
+                            <input type="text" id="locationdescription" name="LocationDescription"
+                                placeholder="Describe location" class="form-control">
+                        </div>
+                        <div class="col-xs-2">
+                                <label for="id" class="form-label1">Beat</label>
+                        </div>
+                        <div> </div>
+                        <div className="form-group">
+                            <input type="text" id="beat" name="Beat" placeholder="Enter Beat" class="form-control">
+                        </div>
+                        <div class="col-xs-2">
+                                <label for="id" class="form-label1">District</label>
+                        </div>
+                        <div className="form-group">
+                            <input type="text" id="district" name="District" placeholder="Enter District code"
+                                class="form-control">
+                        </div>
+                        <div class="col-xs-2">
+                                <label for="id" class="form-label1">Ward</label>
+                            </div>
+                        <div className="form-group">
+                            <input type="text" id="ward" name="Ward" placeholder="Enter Ward number"
+                                class="form-control">
+                        </div>
+                        <div class="col-xs-2">
+                                <label for="id" class="form-label1">Community</label>
+                            </div>
+                        <div className="form-group">
+                            <input type="text" id="communityarea" name="CommunityArea"
+                                placeholder="Enter Community number" class="form-control">
+                        </div>
+                        <div class="col-xs-2">
+                                <label for="id" class="form-label1">FBI Code</label>
+                        </div>
+                        <div className="form-group">
+                            <input type="text" id="fbicode" name="FBICode" placeholder="Enter FBI Code"
+                                class="form-control">
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-2">
+                                <label for="domestic" class="form-label1">Domestic Violence</label>
+                            </div>
+                            <div class="col-xs-5">
+                                <select id="domestic" name="Domestic" class="form-control1">
+                                    <option value="TRUE">True</option>
+                                    <option value="FALSE">False</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-2">
+                                <label for="arrest" class="form-label1">Arrested</label>
+                            </div>
+                            <div class="col-xs-5">
+                                <select id="arrest" name="Arrest" class="form-control1">
+                                    <option value="TRUE">True</option>
+                                    <option value="FALSE">False</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <input type="submit" value="Update" class="form-btn">
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script type='text/javascript'>
+
+function myFunction() {
+    var crime = sessionStorage.getItem("crime");
+    console.log('Crime: ' + crime)
+    crime = JSON.parse(crime);
+    console.log('Type: ' + typeof(crime.ID))
+    console.log("Content: " + crime.ID)
+    document.getElementById("ID").value = crime.ID;
+    document.getElementById("caseNumber").value = crime.CaseNumber;
+    document.getElementById("date").value = crime.Date;
+    document.getElementById("block").value = crime.Block;
+    document.getElementById("IUCR").value = crime.IUCR,
+    document.getElementById("primaryType").value = crime.PrimaryType;
+    document.getElementById("description").value = crime.Description;
+    document.getElementById("locationdescription").value = crime.LocationDescription;
+    document.getElementById("arrest").value = crime.Arrest;
+    document.getElementById("domestic").value = crime.Domestic;
+    document.getElementById("beat").value = crime.Beat;
+    document.getElementById("district").value = crime.District;
+    document.getElementById("ward").value = crime.Ward;
+    document.getElementById("communityarea").value = crime.CommunityArea;
+    document.getElementById("fbicode").value = crime.FBICode;
+}
+
+</script>
+</html>

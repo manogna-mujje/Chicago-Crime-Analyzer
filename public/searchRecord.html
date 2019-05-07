@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Search Records</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/jquery-ui.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script type="text/javascript" src="/js/navbar.js"></script>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/deleteRecord.css">
+</head>
+
+<body>
+    <div class="row db-row2">
+        <div class="col-sm-1">
+
+        </div>
+        <div class="col-sm-2">
+            <label><a href="/displayContents">View and Modify Records</a></label>
+        </div>
+        <div class="col-sm-2">
+            <label><a href="/deleteRecords">Delete Records</a></label>
+        </div>
+         <div class="col-sm-2">
+            <label><a href="/searchRecords">Search Records</a></label>
+        </div>
+        <div class="col-sm-5">
+
+        </div>
+    </div>
+    <form action="/searchRecords" method="POST">
+        <h1 class="header-text">Chicago Crime Rate Analyser</h1>
+        <div class="row">
+            <div class="div-left col-xs-4">
+                <h3 class="h3-text">Enter the Case Number to search the record: </h3>
+            </div>
+            <div class="div-right col-xs-2">
+                <input type="text" name="caseNumber" placeholder="Enter Case Number" class="form-control">
+            </div>
+            <div class="col-xs-4">
+                <input type="submit" value="Search" class="del-btn" />
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>

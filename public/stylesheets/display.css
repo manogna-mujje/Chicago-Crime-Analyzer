@@ -1,0 +1,18 @@
+.db-row2 {
+    padding-top : 10px;
+    padding-bottom: 10px;
+    background-color: white;
+    border-bottom: 1px solid grey;
+    border-top: 1px solid grey;
+    font-size: 16px;
+    margin-bottom: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #0067db;
+}
+
+.header-text2 {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    margin-bottom: 30px;
+}

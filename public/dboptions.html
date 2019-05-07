@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/jquery-ui.css" />
+    <title>Upload Authors</title>
+    <script type="text/javascript" src="/js/navbar.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/dboptions.css">
+</head>
+
+<body>
+    <div class="row db-row2">
+        <div class="col-sm-1">
+
+        </div>
+        <div class="col-sm-2">
+            <label><a href="/displayContents">View and Modify Records</a></label>
+        </div>
+        <div class="col-sm-2">
+            <label><a href="/deleteRecords">Delete Records</a></label>
+        </div>
+        <div class="col-sm-2">
+            <label><a href="/searchRecords">Search Records</a></label>
+        </div>
+        <div class="col-sm-5">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="left-div col-xs-5">
+            <div class="container">
+                <h1 class="text1">Enter the Crime details</h1>
+                <form action="/uploadSingleRecord" method="POST">
+                    <fieldset>
+                        <div className="form-group">
+                            <input type="text" id="ID" name="ID" placeholder="Enter Case ID" class="form-control">
+                        </div>
+                        <div className="form-group">
+                            <input type="text" id="caseNumber" name="CaseNumber" placeholder="Enter Case Number"
+                                class="form-control">
+                        </div>
+                        <div className="form-group">
+                            <input type="text" id="date" name="Date" placeholder="Enter Data & Time"
+                                class="form-control">
+                        </div>
+                        <div className="form-group">
+                            <input type="text" id="block" name="Block" placeholder="Enter Block Details"
+                                class="form-control">
+                        </div>
+                        <div className="form-group">
+                            <input type="text" id="IUCR" name="IUCR" placeholder="Enter IUCR" class="form-control">
+                        </div>
+                        <div className="form-group">
+                            <input type="text" id="primaryType" name="PrimaryType"
+                                placeholder="Enter Primary Type of Crime" class="form-control">
+                        </div>
+                        <div className="form-group">
+                            <input type="text" id="description" name="Description" placeholder="Describe the crime"
+                                class="form-control">
+                        </div>
+                        <div className="form-group">
+                            <input type="text" id="locationdescription" name="LocationDescription"
+                                placeholder="Describe location" class="form-control">
+                        </div>
+                        <div className="form-group">
+                            <input type="text" id="beat" name="Beat" placeholder="Enter Beat" class="form-control">
+                        </div>
+                        <div className="form-group">
+                            <input type="text" id="district" name="District" placeholder="Enter District code"
+                                class="form-control">
+                        </div>
+                        <div className="form-group">
+                            <input type="text" id="ward" name="Ward" placeholder="Enter Ward number"
+                                class="form-control">
+                        </div>
+                        <div className="form-group">
+                            <input type="text" id="communityarea" name="CommunityArea"
+                                placeholder="Enter Community number" class="form-control">
+                        </div>
+                        <div className="form-group">
+                            <input type="text" id="fbicode" name="FBICode" placeholder="Enter FBI Code"
+                                class="form-control">
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-2">
+                                <label for="domestic" class="form-label1">Domestic Violence</label>
+                            </div>
+                            <div class="col-xs-5">
+                                <select id="domestic" name="Domestic" class="form-control1">
+                                    <option value="true">True</option>
+                                    <option value="false">False</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-2">
+                                <label for="arrest" class="form-label1">Arrested</label>
+                            </div>
+                            <div class="col-xs-5">
+                                <select id="arrest" name="Arrest" class="form-control1">
+                                    <option value="true">True</option>
+                                    <option value="false">False</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <input type="submit" value="Submit" class="form-btn">
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <div class="right-div col-xs-5">
+            <h2 class="text2">Upload the data through csv file</h2>
+            <form action="/upload" method="POST" encType="multipart/form-data" style="margin-top: 20px">
+                <input type="file" name="file" accept="*.csv" /><br /><br />
+                <input type="submit" value="Upload" class="form-btn1" />
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
