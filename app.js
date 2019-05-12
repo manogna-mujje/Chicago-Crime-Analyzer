@@ -7,7 +7,8 @@ var mongo = require('mongodb');
 var mongoose = require('mongoose');
 var fileUpload = require('express-fileupload');
 
-mongoose.connect('mongodb://localhost:27017/crimes', {useNewUrlParser: true}, function(err){
+//mongoose.connect('mongodb://localhost:27017/crimes', {useNewUrlParser: true}, function(err){
+mongoose.connect('mongodb://root:password123@ds155616.mlab.com:55616/crimes', {useNewUrlParser: true}, function(err){
   if(err) throw err;
   console.log("sucessfully connected");
 });

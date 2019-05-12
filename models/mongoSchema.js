@@ -10,22 +10,29 @@ var Feedback = mongoose.model('feedback', feedbackSchema);
 
 var crimeSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
-    ID: {type: String, unique:true},
-    CaseNumber: {type: String, unique:true},
+    ID: {type: String, unique: true},
+    "Case Number": {type: String},
+    //CaseNumber: {type: String, unique:true},
     Date: String,
     Block: String,
     IUCR: String,
-    PrimaryType: {type: String},
+    "Primary Type": {type: String},
+    //PrimaryType: {type: String},
     Description: String,
-    LocationDescription: String,
+    "Location Description": String,
+    //LocationDescription: String,
     Arrest: String,
     Domestic: String,
     Beat: String,
     District: String,
     Ward: String,
-    CommunityArea: String,
-    FBICode: String
-
+    "Community Area": String,
+    //CommunityArea: String,
+    "FBI Code": String,
+    //FBICode: String,
+    Year: String,
+    Country: String,
+    State: String
 });
 crimeSchema.plugin(uniqueValidator);
 var Crime = mongoose.model('crimes', crimeSchema);

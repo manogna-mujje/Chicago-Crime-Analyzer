@@ -98,20 +98,20 @@
             <% for(var i=0; i < crime.length; i++) { %>
             <tr>
                 <td class="ID"><%= crime[i].ID %></td>
-                <td class="CaseNumber"><%= crime[i]['CaseNumber'] %></td>
+                <td class="CaseNumber"><%= crime[i]['Case Number'] %></td>
                 <td class="Date"><%= crime[i]['Date'] %></td>
                 <td class="Block"><%= crime[i].Block %></td>
                 <td class="IUCR"><%= crime[i].IUCR %></td>
-                <td class="PrimaryType"><%= crime[i].PrimaryType %></td>
+                <td class="PrimaryType"><%= crime[i]["Primary Type"] %></td>
                 <td class="Description"><%= crime[i].Description %></td>
-                <td class="LocationDescription"><%= crime[i].LocationDescription %></td>
+                <td class="LocationDescription"><%= crime[i]["Location Description"] %></td>
                 <td class="Arrest"><%= crime[i].Arrest %></td>
                 <td class="Domestic"><%= crime[i].Domestic %></td>
                 <td class="Beat"><%= crime[i].Beat %></td>
                 <td class="District"><%= crime[i].District %></td>
                 <td class="Ward"><%= crime[i].Ward %></td>
-                <td class="CommunityArea"><%= crime[i].CommunityArea %></td>
-                <td class="FBICode"><%= crime[i].FBICode %></td>
+                <td class="CommunityArea"><%= crime[i]["Community Area"] %></td>
+                <td class="FBICode"><%= crime[i]["FBI Code"] %></td>
                 <td class="tag"><a id="<%=i%>" href="/updateRecord" style="padding-right: 10px" onclick="myFunction(event)">Edit</a></td>
             </tr>
             <% } %>
