@@ -11,11 +11,13 @@ function getUploadForm(req, res) {
 
 function uploadDataToDB(req, res) {
     if (!req.files) {
-        return res.status(400).send('No files were uploaded');
+        //return res.status(400).send('No files were uploaded');
+        res.render('error.ejs', {data: 'No files were uploaded'});
     }
 
-    var crimeFile = req.files.file;
+    var crimeFile = (!!req.files && !!req.files.file) ? req.files.file : null;
     var crimeList = [];
+    if (crimeFile){
     csv
         .fromString(crimeFile.data.toString(), {
             headers: true,
@@ -33,27 +35,24 @@ function uploadDataToDB(req, res) {
         })
         .on("data-invalid", function(data){
             //do something with invalid row
-            console.log("There is an error parsing it", JSON.stringify(data));
+            res.render('error.ejs', {data: 'Validation Error'});
         })
         .on("data", function (data) {
-            console.log('after parsing data', JSON.stringify(data));
             data['_id'] = new mongoose.Types.ObjectId();
             crimeList.push(data);
         })
         .on("end", function () {
-            console.log("end reached");
-            Crime.create(crimeList, function (err, documents) {
+            Crime.insertMany(crimeList, function (err, documents) {
                 if (err) {
-                    console.log("error");
-                    // throw err;
-                    console.log(err);
-                    return res.status(400).send(err);
+                    //return res.status(400).send(err.errors.ID.message);
+                    res.render('error.ejs', {data: err.errors.ID.message});
                 }
                 else {
                     Crime.find({}, {}, function (err, docs) {
                         if (err) {
                             // throw err;
-                            res.status(400).send("Error in displaying records");
+                            //res.status(400).send("Error in displaying records");
+                            res.render('error.ejs', {data: 'Error in displaying records'});
                         }
                         else {
                             res.render('crimelist', {
@@ -64,9 +63,10 @@ function uploadDataToDB(req, res) {
                 }
             });
         }).on('error', function(error) {
-            console.log("Catch an invalid csv file!!!");
+            res.render('error.ejs', {data: 'Error in uploading new crimes'});
             //return res.fail('The csv file is invalid!');
          });
+    }
 }
 
 function getSingleRecordForm(req, res) {
@@ -74,7 +74,6 @@ function getSingleRecordForm(req, res) {
 }
 
 function uploadSingleRecord(req, res) {
-    console.log("hello");
     var crimeRecord = new Crime({
         _id: new mongoose.Types.ObjectId(),
         ID: req.body.ID,
@@ -97,10 +96,10 @@ function uploadSingleRecord(req, res) {
     crimeRecord.save(function (err) {
         if (err) {
             //    throw err;
-            return res.status(400).send("Data not inserted sucessfully");
+            //return res.status(400).send("Data not inserted sucessfully");
+            res.render('error.ejs', {data: err.errors.ID.message});
         }
         else {
-            console.log("record saved sucessfully");
             Crime.find({}, {}, function (err, docs) {
                 if (err) {
                     // throw err;
@@ -135,20 +134,17 @@ function displayRecords(req, res) {
 }
 
 function deleteRecords(req, res) {
-    console.log("Inside Delete Records", Number(req.body.caseNumber));
     Crime.deleteOne({ "CaseNumber": req.body.caseNumber }, function (err, docs) {
         if (err) {
             // throw err;
             return res.status(400).send("Error in deleting records");
         } else {
-            console.log(docs);
             return res.status(200).send("Delete Successful!");
         }
     })
 }
 
 function searchRecords(req, res) {
-    console.log("Inside Search Records", req.body.caseNumber);
     arr = [];
     Crime.findOne({ "CaseNumber": req.body.caseNumber }, function (err, docs) {
         if (err) {
@@ -182,20 +178,17 @@ function updateRecord(req, res) {
         CommunityArea: req.body.CommunityArea,
         FBICode: req.body.FBICode
     }
-    console.log(JSON.stringify(modifiedData));
     Crime.findOneAndUpdate({ "CaseNumber": req.body.CaseNumber }, { $set: modifiedData }, { new: true }, function (err, docs) {
         if (err) {
             //   throw err;
             return res.status(400).send("Error in searching records");
         } else {
-            // console.log("Results: " + JSON.stringify(docs))
             return res.status(200).send("Update successful!")
         }
     })
 }
 
 function feedbackSubmit(req, res) {
-    console.log("insdie post Feedback: ", req.body);
 
     var feedbackRecord = new Feedback({
         _id:new mongoose.Types.ObjectId(),
@@ -204,14 +197,12 @@ function feedbackSubmit(req, res) {
         feedback: req.body.feedback
     });
 
-    console.log("feedbackrecord: ", feedbackRecord);
     feedbackRecord.save(function (err) {
         if (err) {
             throw err;
             return res.status(400).send("Data not inserted sucessfully");
         }
         else {
-            console.log("record saved sucessfully");
             Feedback.find({}, {}, function (err, docs) {
                 if (err) {
                     throw err;

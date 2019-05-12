@@ -10,8 +10,8 @@ var Feedback = mongoose.model('feedback', feedbackSchema);
 
 var crimeSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
-    ID: {type: String},
-    "Case Number": {type: String},
+    ID: {type: String, unique: true},
+    "Case Number": {type: String, unique: true},
     //CaseNumber: {type: String, unique:true},
     Date: String,
     Block: String,
