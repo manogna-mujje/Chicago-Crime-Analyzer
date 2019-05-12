@@ -74,7 +74,7 @@ function getSingleRecordForm(req, res) {
 }
 
 function uploadSingleRecord(req, res) {
-    console.log("Body:  " + req.body);
+    console.log("Body:  " + JSON.stringify(req.body));
     var crimeRecord = new Crime({
         _id: new mongoose.Types.ObjectId(),
         ID: req.body.ID,
