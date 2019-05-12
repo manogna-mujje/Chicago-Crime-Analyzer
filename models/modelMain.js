@@ -3,6 +3,7 @@ var csv = require('fast-csv');
 var mongoose = require('mongoose');
 mongoose.set('useFindAndModify', false);
 var path = require('path');
+var Feedback = require("../models/mongoSchema").Feedback;
 
 function getUploadForm(req, res){
     res.sendFile(path.join(__dirname, '../public', 'upload.html'));
@@ -175,6 +176,37 @@ function updateRecord(req, res) {
   })
 }
 
+function feedbackSubmit(req, res) {
+    console.log("insdie post Feedback: ", req.body);
+
+    var feedbackRecord = new Feedback({
+        _id:new mongoose.Types.ObjectId(),
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        feedback: req.body.feedback
+    });
+
+    console.log("feedbackrecord: ", feedbackRecord);
+    feedbackRecord.save(function (err) {
+        if (err) {
+            throw err;
+            return res.status(400).send("Data not inserted sucessfully");
+        }
+        else {
+            console.log("record saved sucessfully");
+            Feedback.find({}, {}, function (err, docs) {
+                if (err) {
+                    throw err;
+                    return res.status(400).send("Error in displaying records");
+                }
+            });
+
+        }
+    });
+
+    // return res.status(200).send('files were uploaded');
+   res.sendFile(path.join(__dirname, '../public', 'response.html'));
+}
 module.exports = {
     getUploadForm,
     uploadDataToDB,
@@ -183,5 +215,6 @@ module.exports = {
     displayRecords,
     deleteRecords,
     searchRecords,
-    updateRecord
+    updateRecord,
+    feedbackSubmit
 }
