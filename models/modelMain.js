@@ -183,6 +183,7 @@ function updateRecord(req, res) {
         FBICode: req.body.FBICode
     }
     Crime.findOneAndUpdate({ "CaseNumber": req.body.CaseNumber }, { $set: modifiedData }, { new: true }, function (err, docs) {
+        console.log("Case Number: " + req.body.CaseNumber);
         if (err) {
             //   throw err;
             // return res.status(400).send("Error in searching records");
