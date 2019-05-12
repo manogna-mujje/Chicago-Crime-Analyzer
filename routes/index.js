@@ -30,5 +30,7 @@ router.post('/updateRecord', modelMain.updateRecord);
 router.get('/uploadSingleRecord', modelMain.getSingleRecordForm);
 router.post('/uploadSingleRecord', modelMain.uploadSingleRecord);
 
+//Route to submit feedback
+router.post('/feedback', modelMain.feedbackSubmit);
 
 module.exports = router;
