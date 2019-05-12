@@ -2,13 +2,9 @@ var mongoose = require('mongoose');
 var uniqueValidator = require('mongoose-unique-validator');
 var feedbackSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
-    ID: {type: String, unique:true},
     firstname: String,
     lastname: String,
-    email: String,
-    location: String,
-    datepicker: String,
-    comment: String
+    feedback: String
 });
 var Feedback = mongoose.model('feedback', feedbackSchema);
 
