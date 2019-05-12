@@ -166,7 +166,7 @@ ul ul a {
 .contactus-hdr {
     text-align: center;
     color: brown;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 24px;
 }
 
@@ -185,7 +185,7 @@ ul ul a {
     height: 40px;
     line-height: 50px;
     margin-top: 10px;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .form-control1 {
@@ -203,7 +203,7 @@ ul ul a {
     height: 150px;
     line-height: 150px;
     margin-top: 10px;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .form-control2 {
@@ -221,7 +221,7 @@ ul ul a {
     height: 200px;
     line-height: 200px;
     margin-top: 10px;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 
@@ -242,26 +242,26 @@ ul ul a {
     margin-left: 150px;
     margin-bottom: 50px;
     margin-top: 30px;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .feedback-hdr {
     text-align: center;
     color: brown;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 24px;
 }
 
 .report-hdr {
     text-align: center;
     color: brown;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 40px;
 }
 
 .response-hdr {
     color: brown;
-    font-family: 'Times New Roman', Times, serif; 
+    font-family: Arial, Helvetica, sans-serif; 
     text-align: center;
     margin-top: 50px;
 }
@@ -283,5 +283,5 @@ ul ul a {
     margin-left: 600px;
     margin-bottom: 50px;
     margin-top: 30px;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
