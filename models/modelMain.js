@@ -77,20 +77,20 @@ function uploadSingleRecord(req, res) {
     var crimeRecord = new Crime({
         _id: new mongoose.Types.ObjectId(),
         ID: req.body.ID,
-        CaseNumber: req.body.CaseNumber,
+        "Case Number": req.body.CaseNumber,
         Date: req.body.Date,
         Block: req.body.Block,
         IUCR: req.body.IUCR,
-        PrimaryType: req.body.PrimaryType,
+        "Primary Type": req.body.PrimaryType,
         Description: req.body.Description,
-        LocationDescription: req.body.LocationDescription,
+        "Location Description": req.body.LocationDescription,
         Arrest: req.body.Arrest,
         Domestic: req.body.Domestic,
         Beat: req.body.Beat,
         District: req.body.District,
         Ward: req.body.Ward,
-        CommunityArea: req.body.CommunityArea,
-        FBICode: req.body.FBICode
+        "Community Area": req.body.CommunityArea,
+        "FBI Code": req.body.FBICode
     });
 
     crimeRecord.save(function (err) {
