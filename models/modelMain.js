@@ -189,6 +189,7 @@ function updateRecord(req, res) {
             // return res.status(400).send("Error in searching records");
             res.render('error.ejs', {data: 'No files were uploaded'});
         } else {
+            console.log("UPDATED docs: " + docs)
             // return res.status(200).send("Update successful!");
             res.render('success.ejs', {data: "Update success"})
         }
