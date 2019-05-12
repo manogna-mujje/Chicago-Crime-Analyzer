@@ -137,9 +137,11 @@ function deleteRecords(req, res) {
     Crime.deleteOne({ "CaseNumber": req.body.caseNumber }, function (err, docs) {
         if (err) {
             // throw err;
-            return res.status(400).send("Error in deleting records");
+            // return res.status(400).send("Error in deleting records");
+            res.render('error.ejs', {data: 'Error in deleting records'});
         } else {
-            return res.status(200).send("Delete Successful!");
+            // return res.status(200).send("Delete Successful!");
+            res.render('sucess.ejs', {data: 'Delete Successful'});
         }
     })
 }
@@ -149,10 +151,12 @@ function searchRecords(req, res) {
     Crime.findOne({ "CaseNumber": req.body.caseNumber }, function (err, docs) {
         if (err) {
             //   throw err;
-            return res.status(400).send("Error finding the record!");
+            // return res.status(400).send("Error finding the record!");
+            res.render('error.ejs', {data: 'Error finding the record!'});
         } else {
             if (docs == null) {
-                res.status(200).send("Couldn't find the record!");
+                // res.status(200).send("Couldn't find the record!");
+                res.render('error.ejs', {data: 'Couldn\'t find the record'});
             }
             arr.push(docs);
             return res.status(200).render('crimelist', {
@@ -181,9 +185,11 @@ function updateRecord(req, res) {
     Crime.findOneAndUpdate({ "CaseNumber": req.body.CaseNumber }, { $set: modifiedData }, { new: true }, function (err, docs) {
         if (err) {
             //   throw err;
-            return res.status(400).send("Error in searching records");
+            // return res.status(400).send("Error in searching records");
+            res.render('error.ejs', {data: 'No files were uploaded'});
         } else {
-            return res.status(200).send("Update successful!")
+            // return res.status(200).send("Update successful!");
+            res.render('success.ejs', {data: "Update success"})
         }
     })
 }
