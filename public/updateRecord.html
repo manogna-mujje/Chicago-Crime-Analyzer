@@ -1,185 +1,267 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="/stylesheets/jquery-ui.css" />
-    <title>Upload Authors</title>
-    <script type="text/javascript" src="/js/navbar.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>Dashboard</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
     <link rel="stylesheet" type="text/css" href="/stylesheets/dboptions.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/dashboard.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/deleteRecord.css" />
+
+    <style>
+        input {
+            width: 40% !important;
+        }
+    </style>
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 </head>
 
 <body onload="myFunction()">
-    <div class="row db-row2">
-        <div class="col-sm-1">
-
-        </div>
-        <div class="col-sm-2">
-            <label><a href="/displayContents">View and Modify Records</a></label>
-        </div>
-        <div class="col-sm-2">
-            <label><a href="/deleteRecords">Delete Records</a></label>
-        </div>
-        <div class="col-sm-2">
-            <label><a href="/searchRecords">Search Records</a></label>
-        </div>
-        <div class="col-sm-5">
-
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-3">
-        </div>
-        <div class="left-div col-xs-6">
-            <div class="container">
-                <h1 class="text1">Edit Crime details</h1>
-                <form action="/updateRecord" method="POST">
-                    <fieldset>
-                        <div class="col-xs-2">
-                            <label for="id" class="form-label1">Case ID</label>
-                        </div>
-                        
-                        <div className="form-group">
-                            <input type="text" id="ID" name="ID" placeholder="Enter Case ID" class="form-control">
-                        </div>
-        
-                        <div class="col-xs-2">
-                                <label for="id" class="form-label1">Case Number</label>
-                        </div>
-                        <div className="form-group">
-                            <input type="text" id="caseNumber" name="CaseNumber" placeholder="Enter Case Number"
-                                class="form-control">
-                        </div>
-                        <div class="col-xs-2">
-                                <label for="id" class="form-label1">Date</label>
-                            </div>
-                        <div className="form-group">
-                            <input type="text" id="date" name="Date" placeholder="Enter Data & Time"
-                                class="form-control">
-                        </div>
-                        <div class="col-xs-2">
-                                <label for="id" class="form-label1">Block</label>
-                            </div>
-                        <div className="form-group">
-                            <input type="text" id="block" name="Block" placeholder="Enter Block Details"
-                                class="form-control">
-                        </div>
-                        <div class="col-xs-2">
-                                <label for="id" class="form-label1">IUCR</label>
-                            </div>
-                        <div className="form-group">
-                            <input type="text" id="IUCR" name="IUCR" placeholder="Enter IUCR" class="form-control">
-                        </div>
-                        <div class="col-xs-2">
-                                <label for="id" class="form-label1">Primary Type</label>
-                            </div>
-                        <div className="form-group">
-                            <input type="text" id="primaryType" name="PrimaryType"
-                                placeholder="Enter Primary Type of Crime" class="form-control">
-                        </div>
-                        <div class="col-xs-2">
-                                <label for="id" class="form-label1">Description</label>
-                            </div>
-                        <div className="form-group">
-                            <input type="text" id="description" name="Description" placeholder="Describe the crime"
-                                class="form-control">
-                        </div>
-                        <div class="col-xs-2">
-                                <label for="id" class="form-label1">Location</label>
-                            </div>
-                        <div className="form-group">
-                            <input type="text" id="locationdescription" name="LocationDescription"
-                                placeholder="Describe location" class="form-control">
-                        </div>
-                        <div class="col-xs-2">
-                                <label for="id" class="form-label1">Beat</label>
-                        </div>
-                        <div> </div>
-                        <div className="form-group">
-                            <input type="text" id="beat" name="Beat" placeholder="Enter Beat" class="form-control">
-                        </div>
-                        <div class="col-xs-2">
-                                <label for="id" class="form-label1">District</label>
-                        </div>
-                        <div className="form-group">
-                            <input type="text" id="district" name="District" placeholder="Enter District code"
-                                class="form-control">
-                        </div>
-                        <div class="col-xs-2">
-                                <label for="id" class="form-label1">Ward</label>
-                            </div>
-                        <div className="form-group">
-                            <input type="text" id="ward" name="Ward" placeholder="Enter Ward number"
-                                class="form-control">
-                        </div>
-                        <div class="col-xs-2">
-                                <label for="id" class="form-label1">Community</label>
-                            </div>
-                        <div className="form-group">
-                            <input type="text" id="communityarea" name="CommunityArea"
-                                placeholder="Enter Community number" class="form-control">
-                        </div>
-                        <div class="col-xs-2">
-                                <label for="id" class="form-label1">FBI Code</label>
-                        </div>
-                        <div className="form-group">
-                            <input type="text" id="fbicode" name="FBICode" placeholder="Enter FBI Code"
-                                class="form-control">
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-2">
-                                <label for="domestic" class="form-label1">Domestic Violence</label>
-                            </div>
-                            <div class="col-xs-5">
-                                <select id="domestic" name="Domestic" class="form-control1">
-                                    <option value="TRUE">True</option>
-                                    <option value="FALSE">False</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-2">
-                                <label for="arrest" class="form-label1">Arrested</label>
-                            </div>
-                            <div class="col-xs-5">
-                                <select id="arrest" name="Arrest" class="form-control1">
-                                    <option value="TRUE">True</option>
-                                    <option value="FALSE">False</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <input type="submit" value="Update" class="form-btn">
-                    </fieldset>
-                </form>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h4 class="nav-bar-title">Chicago Crime Analysis</h4>
             </div>
-        </div>
+
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="/">Overview</a>
+                </li>
+                <li>
+                    <a href="/district-analytics">District-Level Analytics</a>
+                </li>
+                <li class="active">
+                    <a href="/admin">Admin Portal</a>
+                </li>
+                <li>
+                    <a href="/contact">Contact Us</a>
+                </li>
+            </ul>
+        </nav>
+    <div id="content">
+        <button type="button" id="sidebarCollapse" class="btn btn-info">
+            <i class="fas fa-align-justify"></i>
+        </button>
+        <h3 class="report-title"> Chicago Crime Report </h3> <br> <br>
+        <br>
+        <div class="card text-center">
+            <div class="card-header">
+              <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                  <a class="nav-link" href="/admin">Add Records</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="/displayContents">View and Modify Records</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/deleteRecords">Delete Records</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/searchRecords">Search Records</a>
+                </li>
+              </ul>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-xs-3">
+                    </div>
+                    <div class="left-div col-xs-6">
+                        <div class="container">
+                            <h1 class="text1">Edit Crime details</h1>
+                            <form action="/updateRecord" method="POST">
+                                <fieldset>
+                                    <div class="col-xs-2">
+                                        <label for="id" class="form-label1">Case ID</label>
+                                    </div>
+                                    
+                                    <div className="form-group">
+                                        <input type="text" id="ID" name="ID" placeholder="Enter Case ID" class="form-control">
+                                    </div>
+                    
+                                    <div class="col-xs-2">
+                                            <label for="id" class="form-label1">Case Number</label>
+                                    </div>
+                                    <div className="form-group">
+                                        <input type="text" id="caseNumber" name="CaseNumber" placeholder="Enter Case Number"
+                                            class="form-control">
+                                    </div>
+                                    <div class="col-xs-2">
+                                            <label for="id" class="form-label1">Date</label>
+                                        </div>
+                                    <div className="form-group">
+                                        <input type="text" id="date" name="Date" placeholder="Enter Data & Time"
+                                            class="form-control">
+                                    </div>
+                                    <div class="col-xs-2">
+                                            <label for="id" class="form-label1">Block</label>
+                                        </div>
+                                    <div className="form-group">
+                                        <input type="text" id="block" name="Block" placeholder="Enter Block Details"
+                                            class="form-control">
+                                    </div>
+                                    <div class="col-xs-2">
+                                            <label for="id" class="form-label1">IUCR</label>
+                                        </div>
+                                    <div className="form-group">
+                                        <input type="text" id="IUCR" name="IUCR" placeholder="Enter IUCR" class="form-control">
+                                    </div>
+                                    <div class="col-xs-2">
+                                            <label for="id" class="form-label1">Primary Type</label>
+                                        </div>
+                                    <div className="form-group">
+                                        <input type="text" id="primaryType" name="PrimaryType"
+                                            placeholder="Enter Primary Type of Crime" class="form-control">
+                                    </div>
+                                    <div class="col-xs-2">
+                                            <label for="id" class="form-label1">Description</label>
+                                        </div>
+                                    <div className="form-group">
+                                        <input type="text" id="description" name="Description" placeholder="Describe the crime"
+                                            class="form-control">
+                                    </div>
+                                    <div class="col-xs-2">
+                                            <label for="id" class="form-label1">Location</label>
+                                        </div>
+                                    <div className="form-group">
+                                        <input type="text" id="locationdescription" name="LocationDescription"
+                                            placeholder="Describe location" class="form-control">
+                                    </div>
+                                    <div class="col-xs-2">
+                                            <label for="id" class="form-label1">Beat</label>
+                                    </div>
+                                    <div> </div>
+                                    <div className="form-group">
+                                        <input type="text" id="beat" name="Beat" placeholder="Enter Beat" class="form-control">
+                                    </div>
+                                    <div class="col-xs-2">
+                                            <label for="id" class="form-label1">District</label>
+                                    </div>
+                                    <div className="form-group">
+                                        <input type="text" id="district" name="District" placeholder="Enter District code"
+                                            class="form-control">
+                                    </div>
+                                    <div class="col-xs-2">
+                                            <label for="id" class="form-label1">Ward</label>
+                                        </div>
+                                    <div className="form-group">
+                                        <input type="text" id="ward" name="Ward" placeholder="Enter Ward number"
+                                            class="form-control">
+                                    </div>
+                                    <div class="col-xs-2">
+                                            <label for="id" class="form-label1">Community</label>
+                                        </div>
+                                    <div className="form-group">
+                                        <input type="text" id="communityarea" name="CommunityArea"
+                                            placeholder="Enter Community number" class="form-control">
+                                    </div>
+                                    <div class="col-xs-2">
+                                            <label for="id" class="form-label1">FBI Code</label>
+                                    </div>
+                                    <div className="form-group">
+                                        <input type="text" id="fbicode" name="FBICode" placeholder="Enter FBI Code"
+                                            class="form-control">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-2">
+                                            <label for="domestic" class="form-label1">Domestic Violence</label>
+                                        </div>
+                                        <div class="col-xs-5">
+                                            <select id="domestic" name="Domestic" class="form-control1">
+                                                <option value="TRUE">True</option>
+                                                <option value="FALSE">False</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-2">
+                                            <label for="arrest" class="form-label1">Arrested</label>
+                                        </div>
+                                        <div class="col-xs-5">
+                                            <select id="arrest" name="Arrest" class="form-control1">
+                                                <option value="TRUE">True</option>
+                                                <option value="FALSE">False</option>
+                                            </select>
+                                        </div>
+                                    </div>
+            
+                                    <input type="submit" value="Update" class="form-btn">
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          
+        
     </div>
-</body>
-<script type='text/javascript'>
+</div>
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 
-function myFunction() {
-    var crime = sessionStorage.getItem("crime");
-    console.log('Crime: ' + crime)
-    crime = JSON.parse(crime);
-    console.log('Type: ' + typeof(crime.ID))
-    console.log("Content: " + crime.ID)
-    document.getElementById("ID").value = crime.ID;
-    document.getElementById("caseNumber").value = crime.CaseNumber;
-    document.getElementById("date").value = crime.Date;
-    document.getElementById("block").value = crime.Block;
-    document.getElementById("IUCR").value = crime.IUCR,
-    document.getElementById("primaryType").value = crime.PrimaryType;
-    document.getElementById("description").value = crime.Description;
-    document.getElementById("locationdescription").value = crime.LocationDescription;
-    document.getElementById("arrest").value = crime.Arrest;
-    document.getElementById("domestic").value = crime.Domestic;
-    document.getElementById("beat").value = crime.Beat;
-    document.getElementById("district").value = crime.District;
-    document.getElementById("ward").value = crime.Ward;
-    document.getElementById("communityarea").value = crime.CommunityArea;
-    document.getElementById("fbicode").value = crime.FBICode;
-}
-
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').toggleClass('active');
+        });
+    });
+    function myFunction() {
+        var crime = sessionStorage.getItem("crime");
+        console.log('Crime: ' + crime)
+        crime = JSON.parse(crime);
+        console.log('Type: ' + typeof(crime.ID))
+        console.log("Content: " + crime.ID)
+        document.getElementById("ID").value = crime.ID;
+        document.getElementById("caseNumber").value = crime.CaseNumber;
+        document.getElementById("date").value = crime.Date;
+        document.getElementById("block").value = crime.Block;
+        document.getElementById("IUCR").value = crime.IUCR,
+        document.getElementById("primaryType").value = crime.PrimaryType;
+        document.getElementById("description").value = crime.Description;
+        document.getElementById("locationdescription").value = crime.LocationDescription;
+        document.getElementById("arrest").value = crime.Arrest;
+        document.getElementById("domestic").value = crime.Domestic;
+        document.getElementById("beat").value = crime.Beat;
+        document.getElementById("district").value = crime.District;
+        document.getElementById("ward").value = crime.Ward;
+        document.getElementById("communityarea").value = crime.CommunityArea;
+        document.getElementById("fbicode").value = crime.FBICode;
+    }
 </script>
+</body>
+
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

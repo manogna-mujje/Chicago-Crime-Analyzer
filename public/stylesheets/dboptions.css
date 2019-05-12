@@ -10,6 +10,7 @@
     border: 1px solid grey;
     margin-left: 10px;
     padding-top: 25px;
+    margin-bottom: 30px;
 }
 
 .form-control {
@@ -68,19 +69,20 @@
     margin-left: 80px;
     margin-bottom: 50px;
     margin-top: 30px;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .text1{
     color: brown;
-    margin-left: 70px;
-    font-family: 'Times New Roman', Times, serif;
+    margin-left: 20px;
+    width: 500px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .text2{
     color: brown;
-    margin-left: 70px;
-    font-family: 'Times New Roman', Times, serif;
+    margin-left: 20px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .form-btn1 {
     display: block;
@@ -99,7 +101,7 @@
     margin-left: 100px;
     margin-bottom: 50px;
     margin-top: 30px;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .db-row2 {
@@ -109,6 +111,7 @@
     border-top: 1px solid grey;
     font-size: 16px;
     margin-bottom: 30px;
-    font-family: 'Times New Roman', Times, serif;
+    padding-left: 10px;
+    font-family: Arial, Helvetica, sans-serif;
     color: brown;
 }
