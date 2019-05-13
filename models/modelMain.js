@@ -136,7 +136,7 @@ function displayRecords(req, res) {
 }
 
 function deleteRecords(req, res) {
-    Crime.deleteOne({ "CaseNumber": req.body.caseNumber }, function (err, docs) {
+    Crime.deleteOne({ "Case Number": req.body.caseNumber }, function (err, docs) {
         if (err) {
             // throw err;
             // return res.status(400).send("Error in deleting records");
@@ -150,7 +150,7 @@ function deleteRecords(req, res) {
 
 function searchRecords(req, res) {
     arr = [];
-    Crime.findOne({ "CaseNumber": req.body.caseNumber }, function (err, docs) {
+    Crime.findOne({ "Case Number": req.body.caseNumber }, function (err, docs) {
         if (err) {
             //   throw err;
             // return res.status(400).send("Error finding the record!");
