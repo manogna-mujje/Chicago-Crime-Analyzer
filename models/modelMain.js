@@ -143,7 +143,7 @@ function deleteRecords(req, res) {
             res.render('error.ejs', {data: 'Error in deleting records'});
         } else {
             // return res.status(200).send("Delete Successful!");
-            res.render('sucess.ejs', {data: 'Delete Successful'});
+            res.render('success.ejs', {data: 'Delete Successful'});
         }
     })
 }
