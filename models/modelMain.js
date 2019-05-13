@@ -98,7 +98,7 @@ function uploadSingleRecord(req, res) {
         if (err) {
             //    throw err;
             //return res.status(400).send("Data not inserted sucessfully");
-            res.render('error.ejs', {data: err.errors.ID.message});
+            res.render('error.ejs', {data: "Data not inserted sucessfully"});
         }
         else {
             Crime.find({}, {}, function (err, docs) {
