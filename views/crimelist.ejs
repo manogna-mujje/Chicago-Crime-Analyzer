@@ -128,7 +128,7 @@
         <script type="text/javascript">
         function myFunction(event) { 
             var index = parseInt(event.target.id);
-            alert("You clicked " + index);
+            // alert("You clicked " + index);
             var data = updateStorage(index);
             console.log("Sending Data: " + data);
             sessionStorage.setItem("crime", JSON.stringify(data));
