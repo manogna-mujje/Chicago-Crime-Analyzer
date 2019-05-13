@@ -99,7 +99,7 @@ function uploadSingleRecord(req, res) {
             //    throw err;
             console.log(err);
             //return res.status(400).send("Data not inserted sucessfully");
-            res.render('error.ejs', {data: "Data not inserted sucessfully"});
+            res.render('error.ejs', {data: err});
         }
         else {
             Crime.find({}, {}, function (err, docs) {
@@ -139,7 +139,7 @@ function deleteRecords(req, res) {
         if (err) {
             // throw err;
             // return res.status(400).send("Error in deleting records");
-            res.render('error.ejs', {data: 'Error in deleting records'});
+            res.render('error.ejs', {data: err});
         } else {
             // return res.status(200).send("Delete Successful!");
             res.render('success.ejs', {data: 'Delete Successful'});
@@ -153,7 +153,7 @@ function searchRecords(req, res) {
         if (err) {
             //   throw err;
             // return res.status(400).send("Error finding the record!");
-            res.render('error.ejs', {data: 'Error finding the record!'});
+            res.render('error.ejs', {data: err});
         } else {
             if (docs == null) {
                 // res.status(200).send("Couldn't find the record!");
@@ -188,7 +188,7 @@ function updateRecord(req, res) {
         if (err) {
             //   throw err;
             // return res.status(400).send("Error in searching records");
-            res.render('error.ejs', {data: 'No files were uploaded'});
+            res.render('error.ejs', {data: err});
         } else {
             console.log("UPDATED docs: " + docs)
             // return res.status(200).send("Update successful!");
@@ -209,7 +209,7 @@ function feedbackSubmit(req, res) {
     feedbackRecord.save(function (err) {
         if (err) {
             throw err;
-            return res.status(400).send("Data not inserted sucessfully");
+            return res.status(400).send(err);
         }
         else {
             Feedback.find({}, {}, function (err, docs) {
