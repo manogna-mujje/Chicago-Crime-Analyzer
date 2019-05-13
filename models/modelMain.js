@@ -97,6 +97,7 @@ function uploadSingleRecord(req, res) {
     crimeRecord.save(function (err) {
         if (err) {
             //    throw err;
+            console.log(err);
             //return res.status(400).send("Data not inserted sucessfully");
             res.render('error.ejs', {data: "Data not inserted sucessfully"});
         }
