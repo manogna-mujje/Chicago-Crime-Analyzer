@@ -21,6 +21,10 @@
             padding: 6px;
             text-align: center;
         }
+
+        h1, .nav-link, .nav-link:active {
+            color: brown !important;
+        }
     </style>
 
     <!-- Font Awesome JS -->
@@ -95,7 +99,7 @@
                 <th> FBI Code</th>
                 <th> Edit Record</th>
             </tr>
-            <% for(var i=0; i < crime.length; i++) { console.log("Crime: " + crime[i]) %>
+            <% for(var i=0; i < crime.length; i++) { %>
             <tr>
                 <td class="ID"><%= crime[i].ID %></td>
                 <td class="CaseNumber"><%= crime[i]['Case Number'] %></td>

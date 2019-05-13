@@ -18,6 +18,14 @@
     line-height: 50px;
     margin-top: 10px;
 }
+
+h1 {
+    color: brown;
+}
+
+.nav-link, .nav-link:active {
+    color: brown !important;
+}
 .h3-text {
     padding-left: 50px;
     font-family: Arial, Helvetica, sans-serif;
@@ -35,7 +43,7 @@
     display: block;
     background-color: brown;
     border-color: brown;
-    width: 50%;
+    width: 50% !important;
     height: 45px;
     color: white;
     font-size: 18px;
