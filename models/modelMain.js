@@ -120,7 +120,6 @@ function uploadSingleRecord(req, res) {
     // return res.status(200).send('files were uploaded');
 }
 
-
 function displayRecords(req, res) {
     Crime.find({}, {}, function (err, docs) {
         if (err) {
