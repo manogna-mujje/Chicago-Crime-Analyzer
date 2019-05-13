@@ -224,6 +224,10 @@
     });
     function myFunction() {
         var crime = sessionStorage.getItem("crime");
+        if(crime == null) {
+            alert("Please let all the records load and try again");
+            return;
+        }
         console.log('Crime: ' + crime)
         crime = JSON.parse(crime);
         console.log('Type: ' + typeof(crime.ID))
